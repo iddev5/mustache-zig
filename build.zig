@@ -10,6 +10,10 @@ pub fn build(b: *std.build.Builder) void {
         },
     });
 
+    _ = b.addModule("mustache", .{
+        .source_file = .{ .path = "src/mustache.zig" },
+    });
+
     const ffi_libs = b.step("ffi", "Build FFI libs");
 
     // Zig cross-target x folder names
